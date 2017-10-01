@@ -1,23 +1,20 @@
 {
   "development": {
-    "username": "",
-    "password": "",
+    "username": "nikhil",
+    "password": "nikhil1211",
     "database": "todos-dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "",
-    "password": "",
+    "username": "nikhil",
+    "password": "nikhil1211",
     "database": "todos-test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "",
-    "password": "",
-    "database": "todos-test",
-    "host": "127.0.0.1",
+    "use_env_variable":"DATABASE_URL",
     "dialect": "postgres"
   }
 }
