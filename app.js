@@ -2,6 +2,11 @@
 
 var SwaggerExpress = require('swagger-express-mw');
 var app = require('express')();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+require('./api/routes')(app);
+
 module.exports = app; // for testing
 
 var config = {

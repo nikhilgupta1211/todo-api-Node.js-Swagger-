@@ -18,10 +18,11 @@ consumes:
 produces:
   - application/json
 paths:
-  /todo:
-    x-swagger-router-controller: todo
+  /todos:
+    x-swagger-router-controller: todos
     get:
       description: get all the items in todo list
+      operationId: list
       responses:
         "200":
           description: Success
@@ -33,6 +34,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
     post:
       description: Add a new todo item to the list
+      operationId: create
       parameters:
         - name: title
           description: todo item title
@@ -49,10 +51,11 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /todo/{id}:
-    x-swagger-router-controller: todo
+  /todos/{id}:
+    x-swagger-router-controller: todos
     get:
       description: get a todo item
+      operationId: show
       parameters:
         - name: id
           type: string
@@ -69,6 +72,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
     put:
       description: update a todo
+      operationId: update
       parameters:
         - name: id
           description: todo item id
@@ -92,6 +96,7 @@ paths:
             $ref: "#/definitions/ErrorResponse"
     delete:
       description: delete a todo
+      operationId: destroy
       parameters:
         - name: id
           description: todo item id
@@ -123,8 +128,6 @@ definitions:
               type: string
             title:
               type: string
-            description:
-              type: string
   ErrorResponse:
     required:
       - message
@@ -137,12 +140,8 @@ definitions:
       title:
         type: string
         description: Title of the todo item
-      description:
-        type: string
-        description: Description for todo item
     required:
         - title
-        - description
   GeneralResponse:
     type: object
     properties:
@@ -159,11 +158,8 @@ definitions:
     required:
       - id
       - title
-      - description
     properties:
       id:
         type: string
       title: 
-        type: string
-      description:
         type: string
