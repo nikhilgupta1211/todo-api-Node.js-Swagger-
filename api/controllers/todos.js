@@ -5,6 +5,8 @@ module.exports = {
     return Todo
       .create({
         title: req.body.title,
+        description: req.body.description,
+        completed: false
       })
       .then(todo => res.status(201).send(todo))
       .catch(error => res.status(400).send(error));
@@ -40,6 +42,8 @@ module.exports = {
       return todo
         .update({
           title: req.body.title || todo.title,
+          description: req.body.description || todo.description,
+          completed: req.body.completed || todo.completed,
         })
         .then(() => res.status(200).send(todo))
         .catch((error) => res.status(400).send(error));

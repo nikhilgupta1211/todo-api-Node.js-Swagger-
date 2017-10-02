@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "nikhil",
-    "password": "nikhil1211",
+    "username": "",
+    "password": "",
     "database": "todos-dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "nikhil",
-    "password": "nikhil1211",
+    "username": "",
+    "password": "",
     "database": "todos-test",
     "host": "127.0.0.1",
     "dialect": "postgres"
